@@ -54,6 +54,6 @@ export class TrackService {
   }
 
   async search(query: string): Promise<Track[]> {
-    return this.trackModel.find({ name: { $regex: new RegExp(query) } });
+    return this.trackModel.find({ name: { $regex: new RegExp(query, 'i') } });
   }
 }
